@@ -1,0 +1,9 @@
+{
+  "platforms": ["ios", "android"],
+  "ios": {
+    "modules": ["EsimInstallModule"]
+  },
+  "android": {
+    "modules": ["com.voyaesim.esiminstall.EsimInstallModule"]
+  }
+}

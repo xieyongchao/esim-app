@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "Voya eSIM",
+    "slug": "voya-esim",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "voyaesim",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#101736",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.voyaesim.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true,
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.voyaesim.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#101736"
+      },
+      "permissions": [
+        "android.permission.READ_PHONE_STATE"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [{ "scheme": "voyaesim" }],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-localization",
+      [
+        "expo-notifications",
+        {
+          "color": "#FFB020"
+        }
+      ],
+      "./plugins/withEsimEntitlement"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "updates": {
+      "url": "https://u.expo.dev/00000000-0000-0000-0000-000000000000",
+      "fallbackToCacheTimeout": 0
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "00000000-0000-0000-0000-000000000000"
+      },
+      "apiBaseUrl": "https://api.voyaesim.com",
+      "useMockData": true
+    }
+  }
+}

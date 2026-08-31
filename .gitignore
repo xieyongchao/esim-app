@@ -1,0 +1,43 @@
+# 依赖
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts.bak
+
+# prebuild 产物：ios/ 和 android/ 由 `expo prebuild` 从 app.json + plugins/
+# 重新生成。提交它们等于把生成物和生成器同时纳入版本管理，两者迟早不一致，
+# 而且手改会在下次 prebuild 时被静默覆盖 —— 这正是我们写 config plugin 的原因。
+/ios/
+/android/
+
+# 原生构建缓存
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# 密钥与本地配置：EAS 的凭证、上游供应商 API key 都从环境变量注入，
+# 不进仓库。.env.example 可以提交，用来说明需要哪些变量。
+.env
+.env.*
+!.env.example
+google-services.json
+GoogleService-Info.plist
+
+# 编辑器与系统
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tsbuildinfo

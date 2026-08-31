@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+group = 'com.voyaesim.esiminstall'
+version = '1.0.0'
+
+android {
+  namespace 'com.voyaesim.esiminstall'
+  compileSdk 34
+
+  defaultConfig {
+    // EuiccManager 是 API 28 (Android 9) 引入的
+    minSdk 28
+    targetSdk 34
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
+  kotlinOptions {
+    jvmTarget = '17'
+  }
+}
+
+dependencies {
+  implementation project(':expo-modules-core')
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}"
+}
